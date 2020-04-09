@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}">
+          {{name | titlecase}}
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-2">
+              <img src={{img}} height="150" width="200">
+            </div>
+            <div class="col-lg-8">
+              <div>
+                <div class="pokemon-type" *ngFor="let type of types">{{type.type.name}}</div>
+                <div style="margin: 0px 20px;" *ngFor="let pokemonStats of stats">
+                  <div class="progress-label">{{pokemonStats.stat.name}}</div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" [style.width.%]=pokemonStats.base_stat
+                      [ngStyle]="{background: results[1]?.color?.name}" aria-valuenow=pokemonStats.base_stat
+                      aria-valuemin="0" aria-valuemax="100">{{pokemonStats.base_stat}}</div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="col-lg-2 ">
+              <h1>#{{id}}</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}">
+          Profile
+        </div>
+        <div class="card-body">
+          <div class="row profile-container">
+            <div class="col-md-2 labels">
+              <p>Height:</p>
+              <p>Catch Rate:</p>
+              <p>Egg Groups:</p>
+              <p>Abilities:</p>
+            </div>
+            <div class="col-md-4">
+              <p>{{height}}</p>
+              <p>{{catchRate}}</p>
+              <p><span *ngFor="let egg of eggGroups"> {{egg.name | titlecase}}, </span></p>
+              <p><span *ngFor="let ability of abilities"> {{ability.ability.name | titlecase}}, </span>
+                <p>
+            </div>
+            <div class="col-md-2 labels">
+              <p>Weight:</p>
+              <p>Gender Ratio:</p>
+              <p>Hatch Steps:</p>
+              <p>Shape:</p>
+            </div>
+            <div class="col-md-4">
+              <p>{{weight}}</p>
+              <p>{{genderRatio}}</p>
+              <p>{{hatchSteps}}</p>
+              <p>{{shape | titlecase}}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

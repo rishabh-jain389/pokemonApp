@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 pokemon-card" *ngFor= "let pokemon of pokemonData">
+      <div class="card mb-4 shadow-sm card-link" (click) = "pokemonDetails(pokemon.id)">
+        <img src={{pokemon.sprites.front_default}} height="200" width="400">
+        <div class="card-body">
+          <p class="card-text">{{pokemon.name}}</p>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="footer">
+      <button type="button" class="btn btn-primary" (click) = "prevButton()" [disabled] = "prevDisabled">Previous</button>
+    <button type="button" class="btn btn-primary" (click) = "nextButton()" [disabled] = "nextDisabled">Next</button>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.card-text {
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: bisque;
+}
+
+.footer {
+    margin: 30px auto;
+}
+
+.footer button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-link{
+    cursor: pointer;
+}

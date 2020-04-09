@@ -1,0 +1,41 @@
+.detail-title{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pokemon-type {
+    display: inline-block;
+    width: 100px;
+    color: #fff;
+    padding: 5px;
+    background-color: green;
+    margin: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.progress-label{
+    width: 20%  ;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.progress {
+    width: 70%;
+    display: inline-block;
+    height: 1.5rem;
+}
+
+.progress-bar{
+    height: 1.5rem;
+}
+
+.labels{
+    font-weight: bold;
+}
+
+.profile-container {
+    margin: 0 80px;
+}

@@ -1,0 +1,9 @@
+.card-text {
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: bisque;
+}
