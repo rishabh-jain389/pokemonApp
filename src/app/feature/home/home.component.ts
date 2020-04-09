@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(private getPokemonService: GetPokemonService, private route: Router) { }
 
   ngOnInit() {
-    this.getAllData('pokemon/?limit=30&offset=0');
+    this.getAllData('pokemon/?limit=20&offset=0');
   }
 
   getAllData(url): void {
