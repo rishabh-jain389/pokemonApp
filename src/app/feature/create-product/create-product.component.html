@@ -1,6 +1,9 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-8">
+      <div class="success-msg"  *ngIf="success">
+        <h3>Product has been sucessfully added.</h3>
+      </div>
       <form name="form" #addProductForm="ngForm" (ngSubmit)="save(formData, addProductForm);" novalidate>
         <div *ngFor="let product of formData; let i = index">
           <h3>Product #{{i+1}}</h3>
@@ -43,7 +46,9 @@
               <label for="Category">Category</label>
               <select class="form-control" [(ngModel)]="product.category" name="cat_{{i}}" #cat="ngModel" required>
                 <option selected value="">Choose...</option>
-                <option value="1">...</option>
+                <option value="1">Electronics</option>
+                <option value="2">Clothes</option>
+                <option value="3">Furniture</option>
               </select>
               <div *ngIf="formSubmitted && cat.invalid" class="error-msg">
                 <div *ngIf="cat.errors.required">Category is required</div>
@@ -73,7 +78,8 @@
               <label for="type">Phone Type</label>
               <select class="form-control" [(ngModel)]="product.phoneType" name="type_{{i}}" #type="ngModel" required>
                 <option selected value="">Choose...</option>
-                <option value="1">1</option>
+                <option value="1">Home</option>
+                <option value="2">work</option>
               </select>
               <div *ngIf="formSubmitted && type.invalid" class="error-msg">
                 <div *ngIf="type.errors.required">Phone Number is required</div>

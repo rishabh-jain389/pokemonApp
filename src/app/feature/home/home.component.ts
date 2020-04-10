@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetPokemonService } from '../get-pokemon.service';
 import { PokemonUrl } from '../pokemon.model';
 import { Router, NavigationExtras } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllData(url): void {
+    //this.SpinnerService.show();
     this.getPokemonService.getAllPokemon(url).subscribe((data: PokemonUrl) => {
       //console.log(data.results);
       this.prevUrl = data.previous;
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
         let id = url.split("/").reverse()[1];
 
         this.getPokemonService.getPokemondetails(id).subscribe((data) => {
+          //this.SpinnerService.hide();
           this.pokemonData.push(data);
         });
       });
