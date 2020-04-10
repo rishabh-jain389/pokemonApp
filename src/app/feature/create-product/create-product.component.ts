@@ -13,6 +13,7 @@ export class CreateProductComponent implements OnInit {
   formSubmitted = false;
   private product: AddProduct[];
   public maxProductError = false;
+  success = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -47,19 +48,20 @@ export class CreateProductComponent implements OnInit {
     this.product = JSON.parse(localStorage.getItem("products"));
     this.formSubmitted = true;
     if (addProductForm.valid) {
-      console.log(data);
-
       if (this.product) {
         data.forEach(element => {
           this.product.push(element);
         });
         localStorage.setItem("products", JSON.stringify(this.product));
-        this.formData = [];
-
+        this.formData = [{ category: "", description: "", price: 0, name: "", imgUrl: "", phoneNumber: "", phoneType: "" }];
+        this.success = true;
+        this.formSubmitted = false;
       }
       else {
         localStorage.setItem("products", JSON.stringify(data));
-        this.formData = [];
+        this.formData = [{ category: "", description: "", price: 0, name: "", imgUrl: "", phoneNumber: "", phoneType: "" }];
+        this.success = true;
+        this.formSubmitted = false;
       }
 
     }

@@ -35,10 +35,7 @@ export class DetailComponent implements OnInit {
       let req2 = this.getPokemonService.getPokemonCompletedetails(url[1].path);
 
       forkJoin([req1, req2]).subscribe(results => {
-        // results[0] is our character
-        // results[1] is our character homeworld
         this.results = results;
-        console.log(results);
         this.name = results[0].name;
         this.img = results[0].sprites.front_default;
         this.stats = results[0].stats;

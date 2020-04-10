@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3 pokemon-card" *ngFor= "let product of products">
       <div class="card mb-4 shadow-sm card-link" (click) = "pokemonDetails(pokemon.id)">
-        <img src={{product.imgUrl}} height="200" width="400">
+        <img class="img-responsive" src={{product.imgUrl}} height="200" >
         <div class="card-body">
           <p class="card-text">{{product.name}}</p>
           

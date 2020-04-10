@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}">
+        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}" [style.color] = "results[1]?.color?.name == 'white' ? 'black' : 'white'">
           {{name | titlecase}}
         </div>
         <div class="card-body">
@@ -17,7 +17,7 @@
                   <div class="progress-label">{{pokemonStats.stat.name}}</div>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" [style.width.%]=pokemonStats.base_stat
-                      [ngStyle]="{background: results[1]?.color?.name}" aria-valuenow=pokemonStats.base_stat
+                      [style.background]="results[1]?.color?.name == 'white' ? 'blue' : 'results[1]?.color?.name'" aria-valuenow=pokemonStats.base_stat
                       aria-valuemin="0" aria-valuemax="100">{{pokemonStats.base_stat}}</div>
                   </div>
                 </div>
@@ -36,7 +36,7 @@
 
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}">
+        <div class="card-header detail-title" [ngStyle]="{background: results[1]?.color?.name}"  [style.color] = "results[1]?.color?.name == 'white' ? 'black' : 'white'">
           Profile
         </div>
         <div class="card-body">
